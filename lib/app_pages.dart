@@ -18,12 +18,14 @@ final GoRouter router = GoRouter(
       routes: <RouteBase>[
         GoRoute(
           path: AppPages.splashScreen,
+          name: AppPages.splashScreen,
           builder: (BuildContext context, GoRouterState state) {
             return const SplashScreen();
           },
         ),
         GoRoute(
           path: AppPages.homeScreen,
+          name: AppPages.homeScreen,
           builder: (BuildContext context, GoRouterState state) {
             return const HomeScreen();
           },

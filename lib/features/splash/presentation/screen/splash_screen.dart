@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            context.go('/${AppPages.homeScreen}');
+            context.goNamed(AppPages.homeScreen);
           },
           child: Container(
             decoration: BoxDecoration(
