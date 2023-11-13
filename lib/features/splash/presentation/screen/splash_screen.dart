@@ -1,34 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:travel_app/app_pages.dart';
+import 'package:travel_app/core/navigation/route.dart';
+import 'package:travel_app/gen/assets.gen.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 3), () {
+      return AppRoute.onboarding.clearAndNavigate(context);
+    },);
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: GestureDetector(
-          onTap: () {
-            context.goNamed(AppPages.homeScreen);
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.deepPurple,
-              borderRadius: BorderRadius.circular(16.0),
-            ),
-            child: const Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Text(
-                'splash screen',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-        ),
+        child: Assets.images.appIcon.image(),
       ),
     );
   }
