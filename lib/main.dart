@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/navigation/router.dart';
+import 'package:travel_app/di.dart';
 
 void main() {
+  getItInit();
   runApp(const MyApp());
 }
 

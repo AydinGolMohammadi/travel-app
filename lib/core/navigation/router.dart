@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:travel_app/core/navigation/route.dart';
+import 'package:travel_app/di.dart';
 import 'package:travel_app/features/home/presentation/screen/home_screen.dart';
 import 'package:travel_app/features/onboarding/presentation/cubit/onboardin_cubit.dart';
 import 'package:travel_app/features/onboarding/presentation/screen/onboarding_screen.dart';
@@ -14,27 +15,16 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: AppRoute.onboarding.path,
-      builder: (context, state) =>
-          BlocProvider(
-            create: (context) => OnboardinCubit(),
-            child: OnboardingScreen(),
-          ),
+      builder: (context, state) {
+        return BlocProvider<OnboardinCubit>(
+          create: (context) => locator.get(),
+          child: OnboardingScreen(),
+        );
+      },
     ),
     GoRoute(
       path: AppRoute.home.path,
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) => HomeScreen(),
     ),
-    // GoRoute(
-    //   path: AppRoute.auth.path,
-    //   builder: (context, state) {
-    //     return BlocProvider(
-    //       create: (context) => AuthCubit(
-    //         userRepository: context.read<UserRepository>(),
-    //         authRepository: context.read<AuthRepository>(),
-    //       ),
-    //       child: const AuthPage(),
-    //     );
-    //   },
-    // ),
   ],
 );
