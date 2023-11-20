@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:travel_app/core/navigation/route.dart';
 import 'package:travel_app/di.dart';
+import 'package:travel_app/features/auth/login/presentation/screen/login_screen.dart';
 import 'package:travel_app/features/home/presentation/screen/home_screen.dart';
 import 'package:travel_app/features/onboarding/presentation/cubit/onboardin_cubit.dart';
 import 'package:travel_app/features/onboarding/presentation/screen/onboarding_screen.dart';
@@ -21,6 +22,10 @@ final GoRouter router = GoRouter(
           child: OnboardingScreen(),
         );
       },
+    ),
+    GoRoute(
+      path: AppRoute.login.path,
+      builder: (context, state) => const LoginScreen(),
     ),
     GoRoute(
       path: AppRoute.home.path,

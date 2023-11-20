@@ -119,7 +119,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           curve: Curves.fastEaseInToSlowEaseOut,
                         );
                         if(state == 2){
-                          AppRoute.home.clearAndNavigate(context);
+                          // AppRoute.home.clearAndNavigate(context);
+                          AppRoute.login.go(context);
                         } else {
                           BlocProvider.of<OnboardinCubit>(context).nextPage();
                         }
