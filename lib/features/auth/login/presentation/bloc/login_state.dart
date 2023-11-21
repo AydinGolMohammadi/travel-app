@@ -7,3 +7,5 @@ class LoginInitial extends LoginState {
   @override
   List<Object?> get props => [];
 }
+
+

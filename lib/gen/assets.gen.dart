@@ -14,6 +14,10 @@ import 'package:flutter/services.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/Facebook.png
+  AssetGenImage get facebook =>
+      const AssetGenImage('assets/images/Facebook.png');
+
   /// File path: assets/images/Onboarding 1.png
   AssetGenImage get onboarding1 =>
       const AssetGenImage('assets/images/Onboarding 1.png');
@@ -34,17 +38,26 @@ class $AssetsImagesGen {
   AssetGenImage get appIcon =>
       const AssetGenImage('assets/images/app icon.png');
 
+  /// File path: assets/images/apple.png
+  AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
+
+  /// File path: assets/images/google.png
+  AssetGenImage get google => const AssetGenImage('assets/images/google.png');
+
   /// File path: assets/images/icon in onboarding.png
   AssetGenImage get iconInOnboarding =>
       const AssetGenImage('assets/images/icon in onboarding.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        facebook,
         onboarding1,
         onboarding2,
         onboarding3,
         appIconBlue,
         appIcon,
+        apple,
+        google,
         iconInOnboarding
       ];
 }

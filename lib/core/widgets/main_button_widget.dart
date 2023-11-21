@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/core/constants/constants.dart';
+import 'package:travel_app/gen/fonts.gen.dart';
 
 class MainButton extends StatelessWidget {
   final bool isEnabled;
@@ -97,13 +98,13 @@ class MainButton extends StatelessWidget {
               ? TextStyle(
                   color: kColorWhite,
                   fontSize: fontSize,
-                  fontFamily: faPrimaryFontFamily,
+                  fontFamily: FontFamily.poppins,
                   fontWeight: FontWeight.w500,
                 )
               : TextStyle(
                   color: Palette.kColorPrimary[8],
                   fontSize: fontSize,
-                  fontFamily: faPrimaryFontFamily,
+                  fontFamily: FontFamily.poppins,
                   fontWeight: FontWeight.w900,
                 ),
         ),
