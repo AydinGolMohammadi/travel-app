@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/core/constants/constants.dart';
 import 'package:travel_app/gen/fonts.gen.dart';
 
-class ThemeController  {
-  static ThemeController themeController=ThemeController();
+class ThemeController {
+  static ThemeController themeController = ThemeController();
 
-   bool isDarkMode = false;
+  bool isDarkMode = false;
 
   ThemeData get themeData => isDarkMode ? darkTheme : lightTheme;
 
@@ -17,104 +17,107 @@ class ThemeController  {
     focusColor: kColorWhite,
     highlightColor: Palette.kColorPrimary[8],
     scaffoldBackgroundColor: Palette.kColorNature[20],
-    colorScheme: ColorScheme.fromSwatch()
-        .copyWith(secondary: kColorSecondary, tertiary: kColorNature, background: kColorBackground),
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      secondary: kColorSecondary,
+      tertiary: kColorNature,
+      background: kColorBackground,
+    ),
     fontFamily: FontFamily.poppins,
-    textTheme: const TextTheme(
+    textTheme: TextTheme(
       bodySmall: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 12,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       bodyMedium: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       bodyLarge: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 16,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       labelSmall: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 11,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       labelMedium: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 12,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       labelLarge: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       titleSmall: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       titleMedium: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 16,
         fontWeight: FontWeight.w500,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       titleLarge: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 22,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       headlineSmall: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 24,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       headlineMedium: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 28,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       headlineLarge: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 32,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       displaySmall: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 36,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       displayMedium: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 46,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
       displayLarge: TextStyle(
-        color: kColorBody,
+        color: Palette.kColorNature[8],
         fontSize: 58,
         fontWeight: FontWeight.w400,
-        fontFamily: faPrimaryFontFamily,
+        fontFamily: FontFamily.poppins,
       ),
     ),
   );
 
-  final ThemeData darkTheme = ThemeData(primaryColor: kColorGrayDark);
+  final ThemeData darkTheme = ThemeData(primaryColor: kColorPrimary);
 
   void toggleTheme() {
     isDarkMode = !isDarkMode;

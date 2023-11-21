@@ -220,7 +220,7 @@ class MainPasswordTextField extends StatelessWidget {
         isDense: true,
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-        hintStyle: Theme.of(context).textTheme.bodyMedium,
+        hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Palette.kColorNature[8]),
         suffixIcon: GestureDetector(
           onTap: () {
             onIconTap();

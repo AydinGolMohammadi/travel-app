@@ -80,19 +80,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       const Gap(40.0),
                       Text(
                         onboardingList[index].title,
-                        style: kTextStyleBold.copyWith(
-                          color: kColorWhite,
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.w700,
-                        ),
+                        style:
+                            Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                  color: kColorWhite,
+                                  fontSize: 30.0,
+                                  fontWeight: FontWeight.w700,
+                                ),
                       ),
                       Text(
                         onboardingList[index].subTitle,
-                        style: kTextStyleBold.copyWith(
-                          color: kColorWhite,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style:
+                            Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                  color: kColorWhite,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w400,
+                                ),
                       ),
                     ],
                   ),
@@ -118,13 +120,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                           curve: Curves.fastEaseInToSlowEaseOut,
                         );
-                        if(state == 2){
+                        if (state == 2) {
                           // AppRoute.home.clearAndNavigate(context);
                           AppRoute.login.go(context);
                         } else {
                           BlocProvider.of<OnboardinCubit>(context).nextPage();
                         }
                       },
+                      useWidget: false,
                     ),
                     const Gap(45.0),
                     AnimatedSmoothIndicator(

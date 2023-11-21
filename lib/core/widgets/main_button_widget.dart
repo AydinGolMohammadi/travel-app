@@ -4,6 +4,7 @@ import 'package:travel_app/gen/fonts.gen.dart';
 
 class MainButton extends StatelessWidget {
   final bool isEnabled;
+  final bool useWidget;
   final String enabledText;
   final String disabledText;
   final double height;
@@ -18,10 +19,12 @@ class MainButton extends StatelessWidget {
   final Color enableTextColor;
   final FontWeight fontWeight;
   final Color? bgColor;
+  final Widget? widget;
 
   const MainButton({
     Key? key,
     required this.isEnabled,
+    required this.useWidget,
     required this.onTap,
     this.enabledText = '',
     this.disabledText = '',
@@ -36,6 +39,7 @@ class MainButton extends StatelessWidget {
     this.backgroundColor = kColorPrimary,
     this.enableTextColor = Colors.white,
     this.fontWeight = FontWeight.w500,
+    this.widget,
   }) : super(key: key);
 
   @override
@@ -91,7 +95,7 @@ class MainButton extends StatelessWidget {
                   },
                 ),
               ),
-        child: Text(
+        child: useWidget ? widget : Text(
           isEnabled ? enabledText : disabledText,
           textAlign: TextAlign.center,
           style: isEnabled
