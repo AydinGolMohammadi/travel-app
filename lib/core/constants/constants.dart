@@ -1,151 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-//
-class GolrangConstant {
-  static const String kDefaultValidator = '';
-  static String appPublicKey = '''
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: openpgp-mobile
-
-xsBNBGMN6FwBCADhchKbhYX0VIovQp/ghkR3cZVBVfM17XEg98iI1LoEwuJzFHUh
-VPz1gDVtSjjq6P+q5Vtt+F9Fsg0iJO0kOmOoMOFlXJdCScDIMvzlEkV14pGNpP2y
-wUFcNkCvpGN7hxLNDlQfjMEdwc0mqfhLlmHzjUranmLe4mKnOEJ30k3J+n2Eekpn
-eTgpvvJTMzgygPbgMCmCeN7bk4TKbb3h1vS5u5efVogqps4QJkTERqVFtimchgFU
-RWe0VYqqxASqgLEL0Jbn85l7uLyXKvB7VeHbyWw4Xllet6nWynkhUP57QxPbWLVo
-82IzYgyzDcGbVHptvxWkvilqI79oCTEtNyfTABEBAAHNIFNBVklTIChmaW50ZWNo
-KSA8b21heEBlc2F2aXMuaXI+wsCJBBMBCAA9BQJjDehcCZA8/NKpR36QaxYhBNLz
-ccyf/DAddou34jz80qlHfpBrAhsDAh4BAhkBAwsJBwIVCAIWAAIiAQAAylUIALAK
-bEPtOS3aeVIC66XoMmHFaAgs/5QUymKbhot1RyrhC0kI1a7uQl08a73oGQN83GME
-aJOO8a4+DHrmBdQdafMQjHLVkQjRABnsm3ELCMTTCz9Kr/k7nIYdv6rFe4N8cq3G
-wo1XrNSSgo4OH04mpdBlUOJE3SY9XamBc0zcpAAI3kwxpAemktK0W7PAXxyHe9yA
-qDJz8C5R0jIEE/ta06e36qgw36owCdztKg5AD1UGdXE+Srs0bbr7EdRAAfNhX68S
-MYIonb5FKpZ5xYYxor7YOg19wFqRkRYlN1dczv/KDqmCOghdmr3od9CEq6mC9M09
-lXjcoEQRHvpx/JQRL6HOwE0EYw3oXAEIANNxXZ6wdU8ZeWE5cbgPf/45mzXKp3dX
-14xgthsKgwHFoDxvybU08hAHdiq1gtTonSeJJj1KhwstYmTHj+0xXGAip3/V5quo
-1PQw1J7+HEojtrwg/jl8NJ9kRlAlzF037+GgO7iP/zsl25j6wP3RDKnqXYpYuIeA
-TK02JeZR6g/In8hebxWFUJ3srYI8cuuDaI6WOoYwsjGthuS9r+Mu6zzc0AsYOLD8
-P6kiWfZsYydSQf/W7Vs/IDHg6G1tHNIOTvSxiKMpwOpUrT09pqO55lEqN32d65Rh
-roNcwrgcozQ4suyYyaoJP+W687FIgAaQp7DCUPTnIYCT2UdGLRgSrVMAEQEAAcLA
-dgQYAQgAKgUCYw3oXAmQPPzSqUd+kGsWIQTS83HMn/wwHXaLt+I8/NKpR36QawIb
-DAAA0TYIANd4zvKYSf6cMwxesohMfaEQtyWNsxwGC+a4zpXfcRay+VNTm38iVGep
-+Z4glIU02uJD4r8jjRBTagvfJLKFKCwv9ThbtIIIZI+nG9PpQsso/VFeqyGdMhbJ
-26fYPBQS4wVhCO1UschVsn9xrEHe9Xuh1k1OQiWd32FvXeTZr0mecwlxQmOegpnk
-ucqp7y6MdKWAmSM84fg4B2Ff0/IZGnlA44RPN4gSBgU8CrlosAQddCPmnYiGkp0X
-b4QuPzyn9vLHKTueYb72IJZKTgfa6wPkuwLBBCX46HyRFz52sezFyavRUE4vty2E
-ppWZyucbNndrPhTY5kIVQPwcNduNBFM=
-=0gzb
------END PGP PUBLIC KEY BLOCK-----
-''';
-  static String appPrivateKey = '''
------BEGIN PGP PRIVATE KEY BLOCK-----
-Version: openpgp-mobile
-
-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
-UE4vty2EppWZyucbNndrPhTY5kIVQPwcNduNBFM=
-=HXW1
------END PGP PRIVATE KEY BLOCK-----
-''';
-  static String serverPublicKey = '''
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: openpgp-mobile
-
-xsBNBGMN6FwBCADhchKbhYX0VIovQp/ghkR3cZVBVfM17XEg98iI1LoEwuJzFHUh
-VPz1gDVtSjjq6P+q5Vtt+F9Fsg0iJO0kOmOoMOFlXJdCScDIMvzlEkV14pGNpP2y
-wUFcNkCvpGN7hxLNDlQfjMEdwc0mqfhLlmHzjUranmLe4mKnOEJ30k3J+n2Eekpn
-eTgpvvJTMzgygPbgMCmCeN7bk4TKbb3h1vS5u5efVogqps4QJkTERqVFtimchgFU
-RWe0VYqqxASqgLEL0Jbn85l7uLyXKvB7VeHbyWw4Xllet6nWynkhUP57QxPbWLVo
-82IzYgyzDcGbVHptvxWkvilqI79oCTEtNyfTABEBAAHNIFNBVklTIChmaW50ZWNo
-KSA8b21heEBlc2F2aXMuaXI+wsCJBBMBCAA9BQJjDehcCZA8/NKpR36QaxYhBNLz
-ccyf/DAddou34jz80qlHfpBrAhsDAh4BAhkBAwsJBwIVCAIWAAIiAQAAylUIALAK
-bEPtOS3aeVIC66XoMmHFaAgs/5QUymKbhot1RyrhC0kI1a7uQl08a73oGQN83GME
-aJOO8a4+DHrmBdQdafMQjHLVkQjRABnsm3ELCMTTCz9Kr/k7nIYdv6rFe4N8cq3G
-wo1XrNSSgo4OH04mpdBlUOJE3SY9XamBc0zcpAAI3kwxpAemktK0W7PAXxyHe9yA
-qDJz8C5R0jIEE/ta06e36qgw36owCdztKg5AD1UGdXE+Srs0bbr7EdRAAfNhX68S
-MYIonb5FKpZ5xYYxor7YOg19wFqRkRYlN1dczv/KDqmCOghdmr3od9CEq6mC9M09
-lXjcoEQRHvpx/JQRL6HOwE0EYw3oXAEIANNxXZ6wdU8ZeWE5cbgPf/45mzXKp3dX
-14xgthsKgwHFoDxvybU08hAHdiq1gtTonSeJJj1KhwstYmTHj+0xXGAip3/V5quo
-1PQw1J7+HEojtrwg/jl8NJ9kRlAlzF037+GgO7iP/zsl25j6wP3RDKnqXYpYuIeA
-TK02JeZR6g/In8hebxWFUJ3srYI8cuuDaI6WOoYwsjGthuS9r+Mu6zzc0AsYOLD8
-P6kiWfZsYydSQf/W7Vs/IDHg6G1tHNIOTvSxiKMpwOpUrT09pqO55lEqN32d65Rh
-roNcwrgcozQ4suyYyaoJP+W687FIgAaQp7DCUPTnIYCT2UdGLRgSrVMAEQEAAcLA
-dgQYAQgAKgUCYw3oXAmQPPzSqUd+kGsWIQTS83HMn/wwHXaLt+I8/NKpR36QawIb
-DAAA0TYIANd4zvKYSf6cMwxesohMfaEQtyWNsxwGC+a4zpXfcRay+VNTm38iVGep
-+Z4glIU02uJD4r8jjRBTagvfJLKFKCwv9ThbtIIIZI+nG9PpQsso/VFeqyGdMhbJ
-26fYPBQS4wVhCO1UschVsn9xrEHe9Xuh1k1OQiWd32FvXeTZr0mecwlxQmOegpnk
-ucqp7y6MdKWAmSM84fg4B2Ff0/IZGnlA44RPN4gSBgU8CrlosAQddCPmnYiGkp0X
-b4QuPzyn9vLHKTueYb72IJZKTgfa6wPkuwLBBCX46HyRFz52sezFyavRUE4vty2E
-ppWZyucbNndrPhTY5kIVQPwcNduNBFM=
-=0gzb
------END PGP PUBLIC KEY BLOCK-----
-''';
-
-  static String kSession = '00000000-0000-0000-0000-000000000000';
-  static String supportNumber = '1234';
-  static bool isOmaxApi = true;}
-
+const String kToken = '';
 const String kStyleMapLight = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const String kStyleMapDark =
     'https://api.mapbox.com/styles/v1/mapbox/navigation-night-v1/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2VwaWRlaHRhZGF5b24iLCJhIjoiY2t5dG16Yzh1MGdhdTJ4bzhqa2N5aXhuZCJ9.RF8Hc0pbIBQygcPtSkXVOA';
-const String golrangBaseUrl = 'https://api.omaxplatform.com:4040/proxy/';
+const String kBaseUrl = 'https://travel-app.iran.liara.run/api/';
 const int kConnectTimeout = 50000;
 const int kReceiveTimeout = 50000;
 const int kMaxDetailsTextLength = 150;
 const String kUnknownInputCast = "Unknown Input Cast";
-const String svgPath = 'assets/golrang_system/svg/';
-const String imagesPath = 'assets/golrang_system/images/';
-const String neshanApiKey = 'service.64fb71fdc26d478bb924f1a224821b6b';
 
 const kColorBody = Color(0xffffffff);
 const kColorPrimary = Color(0xff0FA3E2);
@@ -198,10 +62,7 @@ const kColorGreenLight1 = Color(0xff62b275);
 const kColorError = Color(0xffE40521);
 const kColorBlueDark1 = Color(0xff1c9599);
 const kColorSuccess = Color(0xff169842);
-const BouncingScrollPhysics mainScrollPhysics = BouncingScrollPhysics();
 const String faPrimaryFontFamily = 'poppins';
-const int kMaxPhoneNumber = 9;
-const int kMaxNationalCard = 10;
 
 const BoxShadow kBoxShadow = BoxShadow(
   color: kColorGrayBorderBox,
@@ -454,8 +315,24 @@ class Palette {
 }
 
 const ColorFilter kGreyscale = ColorFilter.matrix(<double>[
-  0.2126, 0.7152, 0.0622, 0, 0,
-  0.2126, 0.7152, 0.0622, 0, 0,
-  0.2126, 0.7152, 0.0622, 0, 0,
-  0,      0,      0,      1, 0,
+  0.2126,
+  0.7152,
+  0.0622,
+  0,
+  0,
+  0.2126,
+  0.7152,
+  0.0622,
+  0,
+  0,
+  0.2126,
+  0.7152,
+  0.0622,
+  0,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
 ]);

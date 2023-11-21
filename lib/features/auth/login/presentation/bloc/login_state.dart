@@ -1,11 +1,18 @@
 part of 'login_bloc.dart';
 
-@immutable
-abstract class LoginState extends Equatable {}
+class LoginState {
+  LoginStatus loginStatus;
+  ToggleStatus toggleStatus;
 
-class LoginInitial extends LoginState {
-  @override
-  List<Object?> get props => [];
+  LoginState({required this.loginStatus, required this.toggleStatus});
+
+  LoginState copyWith({
+    LoginStatus? newLoginStatus,
+    ToggleStatus? newToggleStatus,
+  }) {
+    return LoginState(
+      loginStatus: newLoginStatus ?? loginStatus,
+      toggleStatus: newToggleStatus ?? toggleStatus,
+    );
+  }
 }
-
-
