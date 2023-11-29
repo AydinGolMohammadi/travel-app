@@ -11,6 +11,6 @@ class LoginUseCase implements UseCase<DataState<LoginEntity>, LoginParam> {
 
   @override
   Future<DataState<LoginEntity>> call({required LoginParam params}) {
-    return _repository.loginUser(loginParam: params);
+    return _repository.signUpUser(loginParam: params);
   }
 }

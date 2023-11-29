@@ -5,6 +5,8 @@ import 'package:travel_app/di.dart';
 import 'package:travel_app/features/auth/login/presentation/bloc/login_bloc.dart';
 import 'package:travel_app/features/auth/login/presentation/cubit/toggle_bool_cubit.dart';
 import 'package:travel_app/features/auth/login/presentation/screen/login_screen.dart';
+import 'package:travel_app/features/auth/sign_up/presentation/bloc/sign_up_bloc.dart';
+import 'package:travel_app/features/auth/sign_up/presentation/screen/sign_up_screen.dart';
 import 'package:travel_app/features/home/presentation/screen/home_screen.dart';
 import 'package:travel_app/features/onboarding/presentation/cubit/onboardin_cubit.dart';
 import 'package:travel_app/features/onboarding/presentation/screen/onboarding_screen.dart';
@@ -32,6 +34,14 @@ final GoRouter router = GoRouter(
           create: (context) => locator.get(),
           child: LoginScreen(),
         );
+      },
+    ),
+    GoRoute(
+      path: AppRoute.signUp.path,
+      builder: (context, state) {
+        return BlocProvider<SignUpBloc>(
+            create: (context)=>locator.get(),
+            child:  SignUpScreen());
       },
     ),
     GoRoute(

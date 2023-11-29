@@ -7,6 +7,10 @@ import 'package:travel_app/features/auth/login/data/repository/login_reposintory
 import 'package:travel_app/features/auth/login/domain/repository/login_repository.dart';
 import 'package:travel_app/features/auth/login/domain/usecase/login_usecase.dart';
 import 'package:travel_app/features/auth/login/presentation/bloc/login_bloc.dart';
+import 'package:travel_app/features/auth/sign_up/data/repository/sign_up_reposintory_impl.dart';
+import 'package:travel_app/features/auth/sign_up/domain/repository/sign_up_repository.dart';
+import 'package:travel_app/features/auth/sign_up/domain/usecase/sign_up_usecase.dart';
+import 'package:travel_app/features/auth/sign_up/presentation/bloc/sign_up_bloc.dart';
 import 'package:travel_app/features/onboarding/presentation/cubit/onboardin_cubit.dart';
 
 var locator = GetIt.instance;
@@ -23,4 +27,10 @@ void getItInit() {
   locator.registerSingleton<LoginRepository>(LoginRepositoryImpl(locator()));
   locator.registerSingleton<LoginUseCase>(LoginUseCase(locator()));
   locator.registerSingleton<LoginBloc>(LoginBloc(locator()));
+
+  // signUp dependencies
+  locator.registerSingleton<SignUpRepository>(SignUpRepositoryImpl(locator()));
+  locator.registerSingleton<SignUpUseCase>(SignUpUseCase(locator()));
+  locator.registerSingleton<SignUpBloc>(SignUpBloc(locator()));
+
 }

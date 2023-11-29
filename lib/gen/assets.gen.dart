@@ -65,11 +65,14 @@ class $AssetsImagesGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/back.svg
+  SvgGenImage get back => const SvgGenImage('assets/svg/back.svg');
+
   /// File path: assets/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/svg/star.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [star];
+  List<SvgGenImage> get values => [back, star];
 }
 
 class Assets {

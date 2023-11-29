@@ -141,11 +141,9 @@ class LoginScreen extends StatelessWidget {
                 listener: (context, state) {
                   if (state.loginStatus is LoginCompleted) {
                     final LoginCompleted loginCompleted =
-                    state.loginStatus as LoginCompleted;
-                    final LoginEntity loginEntity =
-                        loginCompleted.loginEntity;
-                    storage.writeSharedData(
-                        PrefKeys.kToken, loginEntity.token);
+                        state.loginStatus as LoginCompleted;
+                    final LoginEntity loginEntity = loginCompleted.loginEntity;
+                    storage.writeSharedData(PrefKeys.kToken, loginEntity.token);
                     AppRoute.home.clearAndNavigate(context);
                   }
                 },
@@ -158,8 +156,8 @@ class LoginScreen extends StatelessWidget {
                         BlocProvider.of<LoginBloc>(context).add(
                           UserLoginEvent(
                             LoginParam(
-                              identity: 'aydingolmohammadii@gmail.com',
-                              password: '0441099211aT@',
+                              identity: 'aydin1234@gmail.com',
+                              password: 'aydin1234',
                             ),
                           ),
                         );
@@ -274,27 +272,30 @@ class LoginScreen extends StatelessWidget {
               const Gap(60),
 
               // create account
-              Text.rich(
-                TextSpan(
-                  children: [
-                    TextSpan(
-                      text: 'Doesn’t have account on dicover? ',
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            color: Palette.kColorNature[8],
-                            fontSize: 10,
-                            fontWeight: FontWeight.w400,
-                          ),
-                    ),
-                    TextSpan(
-                      text: 'Create Account',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Doesn’t have account on dicover? ',
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: Palette.kColorNature[8],
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                        ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      AppRoute.signUp.push(context);                    },
+                    child: Text(
+                      'Create Account',
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             color: kColorBlack,
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
                           ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),
